@@ -222,6 +222,45 @@ a.kicker:hover{color:var(--claret);border-color:var(--claret)}
   .prizes{grid-template-columns:1fr;gap:18px}.prize{padding:16px 0 0;border-left:0;border-top:1px solid var(--lime-2)}.prize:first-child{padding-top:0;border-top:0}
   .tl{grid-template-columns:1fr}.tl::before,.tl::after{left:7px;top:0;width:2px;height:auto}.tl::before{bottom:0;right:auto}.tl::after{height:var(--prog);bottom:auto;transition:height 1.8s cubic-bezier(.2,.8,.2,1)}
   .tl li{padding:0 0 22px 34px}.tl li::before{top:2px}}
+
+/* ---------- what's on + mailing list ---------- */
+.on{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px 56px;align-items:start;padding-block:72px 8px}
+.on h2{font:400 clamp(34px,4.6vw,52px)/1.02 var(--display);margin:10px 0 8px}
+.on .sub{color:var(--ink-dim);margin:0 0 26px;font-size:16px}
+.ev{list-style:none;margin:0;padding:0;display:grid}
+.ev li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:18px;padding:18px 0;border-top:1px solid var(--lime-2);align-items:start}
+.ev li:last-child{border-bottom:1px solid var(--lime-2)}
+.when{text-align:center;border:1.5px solid var(--ink);border-radius:2px;padding:7px 4px 8px;background:#fff}
+.when .m{font:600 11px/1 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--claret)}
+.when .dd{font:400 30px/1 var(--display);margin-top:4px}
+.when .wd{font:500 11px/1 var(--ui);color:var(--ink-dim);margin-top:3px}
+.when.rec{border-style:dashed}.when.rec .dd{font:700 17px/1.1 var(--chalkf);margin-top:6px}
+.ev h3{font:400 22px/1.2 var(--display);margin:0 0 4px}
+.ev p{margin:0;color:var(--ink-dim);font-size:15.5px;line-height:1.55}
+.tag{display:inline-block;font:600 10.5px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;padding:5px 7px;border-radius:2px;margin-left:8px;vertical-align:3px;background:var(--lime-2);color:var(--ink-dim)}
+.tag.hot{background:var(--claret);color:#fff}
+.hours{margin-top:22px;font:500 14px/1.6 var(--ui);color:var(--ink-dim)}
+.hours b{color:var(--ink)}
+.join{position:sticky;top:calc(20px + env(safe-area-inset-top,0px));background:var(--slate);color:var(--chalk);border:14px solid var(--oak);
+  border-image:linear-gradient(135deg,var(--oak-hi),var(--oak) 45%,#24180f 75%,var(--oak-hi)) 1;padding:clamp(22px,4vw,36px);
+  background-image:radial-gradient(ellipse at 25% 15%,rgba(255,255,255,.08),transparent 55%);box-shadow:0 28px 60px -26px rgba(0,0,0,.55)}
+.join h3{font:700 clamp(28px,3.4vw,36px)/1.05 var(--chalkf);margin:8px 0 10px}
+.join p{margin:0;color:#dcdad0;font-size:16px}
+.join form{display:grid;gap:10px;margin-top:20px}
+.join label{font:600 12px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--chalk-dim)}
+.join input{font:400 17px/1.3 var(--serif);color:var(--ink);background:var(--chalk);border:0;border-radius:2px;padding:14px 14px;width:100%}
+.join input:focus{outline:3px solid var(--lamp);outline-offset:1px}
+.join button{font:600 13px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;background:var(--lamp);color:#24180f;border:0;border-radius:2px;padding:16px;cursor:pointer;transition:transform .15s,background .2s}
+.join button:hover{background:#f6b65a;transform:translateY(-1px)}
+.join button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.j-note{font:400 14px/1.5 var(--ui)!important;color:var(--chalk-dim)!important;margin-top:14px!important}
+.j-note b{color:var(--chalk)}
+.j-alt{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:18px;padding-top:16px;border-top:1px dashed rgba(241,239,230,.25);font:500 14px/1.4 var(--ui)}
+.j-alt a{color:var(--chalk)}
+.join .copy{font:600 11px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;background:transparent;color:var(--chalk);border:1px solid rgba(241,239,230,.4);border-radius:2px;padding:7px 9px;cursor:pointer}.join .copy:hover{background:rgba(255,255,255,.08);transform:none}
+.social{display:flex;gap:16px;margin-top:14px;font:600 13px/1 var(--ui)}
+.social a{color:var(--chalk);text-underline-offset:3px}
+@media (max-width:860px){.on{grid-template-columns:1fr}.join{position:static}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
 </style>
 </head>
@@ -288,6 +327,37 @@ a.kicker:hover{color:var(--claret);border-color:var(--claret)}
       <div class="cta-row"><a class="cta" href="https://bayfordinn.com/bayford-inn-art-competition" target="_blank" rel="noopener">Rules and entry form →</a><p>Free to enter. All ages and all abilities welcome.</p></div>
       <p class="vote"><b>Enjoying the calendar?</b> Vote for it in the People's Choice Award when you visit the pub between 7 and 25 November.</p>
     </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="on" id="whats-on">
+    <div>
+      <div class="lbl">Around the inn</div>
+      <h2>What's on at the Bayford</h2>
+      <p class="sub">The calendar counts the nights, but the pub is open on most of them. Here's what's coming up.</p>
+      <ul class="ev" id="events">
+        <li data-until="2026-10-27"><div class="when"><div class="m">Oct</div><div class="dd">27</div><div class="wd">Tue</div></div><div><h3>Paint and Prosecco <span class="tag">Fully booked</span></h3><p>An evening of painting with a free glass of prosecco, 7pm to 9pm.</p></div></li>
+        <li data-until="2026-11-07"><div class="when"><div class="m">Nov</div><div class="dd">7</div><div class="wd">Sat</div></div><div><h3>A celebration of Polish flavours <span class="tag hot">Book ahead</span></h3><p>A four-course set menu on the night the art entries close. Spaces are limited, so booking is essential.</p></div></li>
+        <li data-until="2026-11-26"><div class="when"><div class="m">Nov</div><div class="dd">26</div><div class="wd">Thu</div></div><div><h3>Anniversary &amp; Awards Night</h3><p>One year since the village reopened its pub. The art competition winners are announced.</p></div></li>
+        <li><div class="when rec"><div class="m">Every</div><div class="dd">Friday</div></div><div><h3>Fish and chips</h3><p>Cooked by one of the village. The inn is looking for more home cooks to help across the week.</p></div></li>
+        <li><div class="when rec"><div class="m">Each</div><div class="dd">month</div></div><div><h3>Quiz night</h3><p>£1 a head goes to the renovation fund. To enter a team, email manager@bayfordinn.com.</p></div></li>
+      </ul>
+      <p class="hours"><b>Open</b> Wed–Fri 4pm–11pm · Sat 12pm–11pm · Sun 12pm–6pm · closed Mon and Tue<br><b>Bookings</b> reservations@bayfordinn.com · <a href="tel:+447492847824" style="color:inherit">07492 847824</a></p>
+    </div>
+    <aside class="join" aria-labelledby="joinH">
+      <div class="lbl chalklbl">The mailing list</div>
+      <h3 id="joinH">Hear what's happening first</h3>
+      <p>Quiz dates, food nights, pop-ups and news from the inn, straight to your inbox.</p>
+      <form id="joinForm" novalidate>
+        <label for="joinEmail">Your email address</label>
+        <input id="joinEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <button type="submit">Join the mailing list</button>
+      </form>
+      <p class="j-note" id="joinNote">This opens your email app with a ready-written message to the inn. Press send and you're on the list. Your address goes only to the Bayford Inn; this site doesn't keep it.</p>
+      <div class="j-alt"><span>Or email <b>info@bayfordinn.com</b></span><button class="copy" id="copyAddr" type="button">Copy</button></div>
+      <div class="social"><a href="https://www.facebook.com/profile.php?id=61571029541000" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/the_bayford_inn" target="_blank" rel="noopener">Instagram</a><a href="https://bayfordinn.com/" target="_blank" rel="noopener">bayfordinn.com</a></div>
+    </aside>
   </section>
 </div>
 
@@ -520,6 +590,17 @@ qIntro();
   else if(today===vEnd+1){big.textContent="Tonight";lab.textContent="the winners are announced";[0,1,2].forEach(i=>L(i).classList.add("done"));L(3).classList.add("now");p=75}
   else{big.textContent="2027";lab.textContent="see you next year";[0,1,2,3].forEach(i=>L(i).classList.add("done"));p=100}
   const tl=document.getElementById("tl");setTimeout(()=>tl.style.setProperty("--prog",p+"%"),400)})();
+
+// ---------- what's on + mailing list ----------
+document.querySelectorAll("#events li[data-until]").forEach(li=>{const [y,m,d]=li.dataset.until.split("-").map(Number);if(today>dn(y,m,d))li.remove()});
+const jf=document.getElementById("joinForm"),je=document.getElementById("joinEmail"),jn=document.getElementById("joinNote");
+jf.addEventListener("submit",e=>{e.preventDefault();const v=je.value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){jn.innerHTML="<b>That email address doesn't look right.</b> Check it and try again.";je.focus();return}
+  const body=`Hello,\n\nPlease add me to the Bayford Inn email list so I hear about what's on.\n\nMy email address: ${v}\n\nThank you!\n\n(Sent from Twenty Nights in Bayford)`;
+  location.href="mailto:info@bayfordinn.com?subject="+encodeURIComponent("Please add me to the Bayford Inn mailing list")+"&body="+encodeURIComponent(body);
+  jn.innerHTML="<b>Your email app should now be open.</b> Press send and you're on the list. If nothing opened, email info@bayfordinn.com and ask to be added."});
+document.getElementById("copyAddr").addEventListener("click",e=>{const b=e.currentTarget;
+  navigator.clipboard.writeText("info@bayfordinn.com").then(()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1800)}).catch(()=>{b.textContent="info@bayfordinn.com"})});
 </script>
 </body>
 </html>
