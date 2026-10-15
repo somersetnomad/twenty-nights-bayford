@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Twenty nights, twenty doors: a countdown to the Bayford Inn Anniversary and Awards Night, with a true piece of Bayford history behind every door.">
+<meta property="og:title" content="Twenty Nights in Bayford">
+<meta property="og:description" content="A countdown calendar for the Bayford Inn, Somerset. One door opens each night, 7 to 26 November 2026.">
+<meta property="og:image" content="img/front.jpg">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Twenty Nights in Bayford</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@500;600&family=Cabin+Sketch:wght@400;700&display=swap">
+<style>
+/* Layout: the page is the bar room itself. Limewash walls above, sage tongue-and-groove panelling below.
+   The calendar is a photograph of the room, with twenty doors cut on its real windows, lamps, chairs and fireplace.
+   Behind each door, a chalk slate like the pub's own board. One deliberate daytime look. */
+:root{
+  --lime:#f2f2ec; --lime-2:#e7e7df; --sage:#a9bba5; --sage-dk:#8ea18a; --sage-ink:#2f3d31;
+  --oak:#3a2a1d; --oak-hi:#6b4c32; --slate:#1f2524; --chalk:#f1efe6; --chalk-dim:#bfc1b8;
+  --ink:#232a25; --ink-dim:#5a645c; --lamp:#f0a43c; --claret:#6e2a2a;
+  --display:"Libre Caslon Display","Big Caslon",Georgia,serif;
+  --serif:"Libre Caslon Text",Georgia,serif;
+  --ui:"Libre Franklin","Franklin Gothic Medium",Arial,sans-serif;
+  --chalkf:"Cabin Sketch","Chalkboard SE","Comic Sans MS",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{background:var(--lime);color:var(--ink);font:400 17px/1.65 var(--serif);-webkit-font-smoothing:antialiased;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+.wrap{max-width:1180px;margin:0 auto}
+
+/* ---------- header: limewash wall ---------- */
+header{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:36px 56px;align-items:center;padding-block:48px 40px}
+.kicker{font:600 12px/1.4 var(--ui);letter-spacing:.2em;text-transform:uppercase;color:var(--sage-ink)}
+h1{font:400 clamp(46px,7.4vw,92px)/.95 var(--display);letter-spacing:-.01em;margin:16px 0 0;text-wrap:balance}
+h1 i{font-family:var(--serif);font-style:italic;font-size:.8em;color:var(--claret)}
+.lede{max-width:52ch;color:var(--ink-dim);margin:20px 0 0}
+.count{display:flex;align-items:center;gap:16px;margin-top:26px}
+.slate-sm{background:var(--slate);color:var(--chalk);font:700 clamp(34px,5vw,48px)/1 var(--chalkf);padding:10px 18px 12px;border:6px solid var(--oak);border-radius:3px;box-shadow:inset 0 0 18px rgba(0,0,0,.5),0 6px 14px -6px rgba(0,0,0,.4);min-width:84px;text-align:center}
+.count p{margin:0;font:500 14px/1.4 var(--ui);color:var(--ink-dim);max-width:22ch}
+.photo{justify-self:end;width:min(100%,380px);margin:0;background:#fff;padding:10px 10px 0;box-shadow:0 1px 2px rgba(0,0,0,.08),0 18px 40px -16px rgba(40,50,40,.45);transform:rotate(1.4deg)}
+.photo img{display:block;width:100%;height:auto}
+.photo figcaption{font:400 italic 14px/1.3 var(--serif);color:var(--ink-dim);padding:10px 2px 12px}
+@media (max-width:760px){header{grid-template-columns:1fr;padding-block:32px 28px}.photo{justify-self:start;transform:rotate(-1deg);width:min(100%,340px)}}
+
+/* ---------- panelling band ---------- */
+.panel{background:var(--sage);margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px;
+  background-image:repeating-linear-gradient(90deg,transparent 0 58px,rgba(47,61,49,.16) 58px 59px,rgba(255,255,255,.18) 59px 60px);
+  border-top:14px solid var(--sage-dk);box-shadow:inset 0 3px 0 rgba(255,255,255,.35)}
+.bar{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding-block:22px 18px}
+.state{font:500 15px/1.35 var(--ui);color:var(--sage-ink)}
+.state b{font-weight:600;color:var(--ink)}
+.toggle{display:inline-flex;align-items:center;gap:12px;cursor:pointer;font:600 13px/1 var(--ui);letter-spacing:.06em;color:var(--sage-ink);user-select:none;background:rgba(255,255,255,.4);padding:8px 12px 8px 8px;border-radius:999px}
+.toggle input{position:absolute;opacity:0;width:1px;height:1px}
+.track{width:40px;height:22px;border-radius:11px;background:var(--sage-dk);position:relative;transition:background .25s}
+.track::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.toggle input:checked+.track{background:var(--claret)}
+.toggle input:checked+.track::after{transform:translateX(18px)}
+.toggle input:focus-visible+.track{outline:2px solid var(--ink);outline-offset:3px}
+
+/* ---------- the room ---------- */
+.frame{background:linear-gradient(135deg,var(--oak-hi),var(--oak) 40%,#2a1d13 70%,var(--oak-hi));padding:clamp(8px,1.4vw,16px);border-radius:3px;
+  box-shadow:0 30px 60px -24px rgba(25,35,25,.6),inset 0 0 0 1px rgba(255,255,255,.12)}
+.pan{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;background:#000}
+.room{position:relative;width:100%;aspect-ratio:2000/1125;background:url("img/room.webp") center/100% 100% no-repeat}
+.room::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,transparent 60%,rgba(20,14,8,.35))}
+@media (max-width:760px){.room{width:1150px;max-width:none}}
+.swipe{display:none;font:600 12px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--sage-ink);margin-top:12px}
+@media (max-width:760px){.swipe{display:block}}
+
+.cell{position:absolute;perspective:900px;z-index:1}
+.inside{position:absolute;inset:0;background:var(--slate);
+  background-image:radial-gradient(circle at 30% 20%,rgba(255,255,255,.07),transparent 50%),radial-gradient(circle at 80% 90%,rgba(255,255,255,.05),transparent 40%);
+  box-shadow:inset 0 0 0 2px #120d09,inset 0 6px 14px rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.inside span{font:700 var(--fs,22px)/1 var(--chalkf);color:var(--chalk);opacity:.92;text-shadow:0 0 1px rgba(255,255,255,.4)}
+.door{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:none;cursor:pointer;transform-origin:0 50%;transform-style:preserve-3d;transition:transform .95s cubic-bezier(.25,.9,.2,1.02);outline:none}
+.face,.back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.face{background-image:url("img/room.webp");background-repeat:no-repeat;
+  box-shadow:0 0 0 1px rgba(255,255,255,.55),0 0 0 2px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.25)}
+.back{transform:rotateY(180deg);background:#e9e4d6;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2),inset -10px 0 14px -10px rgba(0,0,0,.35)}
+.num{position:absolute;top:6%;left:9%;font:700 var(--ns,22px)/1 var(--chalkf);color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.55),0 0 8px rgba(0,0,0,.65),0 0 2px rgba(0,0,0,.9);pointer-events:none;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.cell.ready .face{box-shadow:0 0 0 1.5px rgba(255,226,170,.95),0 2px 8px rgba(0,0,0,.3)}
+.cell.tonight .face{box-shadow:0 0 0 2px #ffd28a,0 0 18px 4px rgba(240,164,60,.9)}
+.cell.tonight{animation:breathe 2.4s ease-in-out infinite}
+@keyframes breathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12)}}
+.cell.ready .door:hover,.cell.ready .door:focus-visible{transform:rotateY(-16deg)}
+.door:focus-visible .face{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--ink)}
+.cell.open{z-index:4}
+.cell.open .door{transform:rotateY(-108deg)}
+.cell.big .num{font-size:calc(var(--ns,22px)*1.35)}
+.shake{animation:shake .5s}
+@keyframes shake{20%{transform:rotateY(-6deg)}45%{transform:rotateY(2deg)}70%{transform:rotateY(-3deg)}}
+.legend{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font:600 12px/1.4 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--sage-ink)}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);opacity:0;background:var(--slate);color:var(--chalk);font:500 14px/1.35 var(--ui);padding:12px 18px;border-radius:4px;border:4px solid var(--oak);transition:.3s;pointer-events:none;z-index:40;max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- fact board ---------- */
+.scrim{position:fixed;inset:0;z-index:50;background:rgba(30,36,30,.55);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));opacity:0;transition:opacity .3s}
+.scrim.on{opacity:1}
+.board{position:relative;width:min(660px,100%);max-height:100%;overflow:auto;background:var(--slate);color:var(--chalk);
+  background-image:radial-gradient(ellipse at 25% 15%,rgba(255,255,255,.08),transparent 55%),radial-gradient(ellipse at 85% 80%,rgba(255,255,255,.05),transparent 50%);
+  border:clamp(10px,2vw,16px) solid var(--oak);border-image:linear-gradient(135deg,var(--oak-hi),var(--oak) 45%,#24180f 75%,var(--oak-hi)) 1;
+  padding:clamp(24px,5vw,48px);box-shadow:0 40px 90px -20px rgba(0,0,0,.6);transform:translateY(12px) rotate(-.4deg);transition:transform .45s cubic-bezier(.2,.9,.2,1)}
+.scrim.on .board{transform:none}
+.b-eye{font:600 12px/1.5 var(--ui);letter-spacing:.18em;text-transform:uppercase;color:var(--chalk-dim);padding-right:36px}
+.b-year{font:700 clamp(68px,14vw,128px)/.9 var(--chalkf);margin:14px 0 6px;color:var(--chalk)}
+.b-title{font:400 clamp(26px,4.2vw,36px)/1.15 var(--display);margin:0 0 16px;color:#f7e3b8;text-wrap:balance}
+.b-body{margin:0;max-width:54ch;font:400 17.5px/1.7 var(--serif);color:#e4e2d8}
+.b-src{margin:22px 0 0;padding-top:14px;border-top:1px dashed rgba(241,239,230,.25);font:400 13px/1.5 var(--ui);color:var(--chalk-dim)}
+.b-nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+.btn{font:600 12px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--chalk);background:transparent;border:1.5px solid rgba(241,239,230,.45);border-radius:2px;padding:12px 14px;cursor:pointer}
+.btn:hover{border-color:var(--chalk)}.btn:focus-visible{outline:2px solid #f7e3b8;outline-offset:2px}
+.btn[disabled]{opacity:.3;cursor:default}
+.x{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;background:none;color:var(--chalk-dim);font:400 30px/1 var(--ui);cursor:pointer}
+.x:hover{color:#fff}.x:focus-visible{outline:2px solid #f7e3b8}
+
+/* ---------- footer: back on the limewash ---------- */
+.foot{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px 56px;padding-block:44px 56px}
+.foot h2{font:400 28px/1.15 var(--display);margin:0 0 10px}
+.foot p{margin:0;color:var(--ink-dim);font-size:16px;max-width:52ch}
+.lbl{font:600 11px/1 var(--ui);letter-spacing:.2em;text-transform:uppercase;color:var(--sage-ink);margin-bottom:12px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font:400 14px/1.4 var(--ui)}
+.foot a{color:var(--ink);text-decoration-color:var(--sage-dk);text-underline-offset:3px}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+
+/* ---------- life ---------- */
+.rise{animation:rise 1s cubic-bezier(.2,.8,.2,1) both}.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}
+@keyframes rise{from{transform:translateY(16px);opacity:0}}
+.photo{animation:pinup 1.1s cubic-bezier(.2,.9,.25,1.05) .3s both}
+@keyframes pinup{from{transform:rotate(7deg) translateY(-26px);opacity:0}}
+a.kicker{text-decoration:none;display:inline-flex;gap:8px;align-items:center;border-bottom:1px solid rgba(47,61,49,.3);padding-bottom:3px}
+a.kicker:hover{color:var(--claret);border-color:var(--claret)}
+.state-wrap{display:flex;flex-direction:column;gap:6px}
+.clock{font:500 13px/1.2 var(--ui);color:var(--sage-ink);font-variant-numeric:tabular-nums}
+.clock b{font:700 17px/1 var(--chalkf);color:var(--ink);margin-left:4px;letter-spacing:.02em}
+.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:6;mix-blend-mode:screen}
+.room.evening{filter:brightness(.74) saturate(1.12) sepia(.1)}
+
+/* ---------- quiz: the chalkboard band ---------- */
+.quiz{background:var(--slate);color:var(--chalk);
+  margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:64px 72px;
+  background-image:radial-gradient(ellipse at 18% 10%,rgba(255,255,255,.06),transparent 50%),radial-gradient(ellipse at 90% 90%,rgba(255,255,255,.04),transparent 45%);
+  border-top:16px solid var(--oak);border-bottom:16px solid var(--oak)}
+.q-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px 56px;align-items:start}
+.chalklbl{color:var(--chalk-dim)}
+.q-h{font:700 clamp(36px,5vw,58px)/1.02 var(--chalkf);margin:10px 0 16px;text-wrap:balance}
+.q-lead{color:var(--chalk-dim);margin:0;max-width:40ch}
+.q-tally{font:500 14px/1.4 var(--ui);color:var(--chalk-dim);margin:22px 0 0}.q-tally b{color:var(--chalk);font:700 20px/1 var(--chalkf);margin-left:4px}
+.q-card{background:rgba(255,255,255,.035);border:1.5px dashed rgba(241,239,230,.28);padding:clamp(20px,4vw,36px);min-height:320px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.q-meta{font:600 12px/1 var(--ui);letter-spacing:.18em;text-transform:uppercase;color:var(--chalk-dim);display:flex;justify-content:space-between;gap:12px}
+.q-prompt{font:400 clamp(22px,3vw,29px)/1.3 var(--display);color:#f7e3b8;margin:0;text-wrap:balance}
+.q-opts{display:grid;gap:10px}
+.q-opt{text-align:left;font:400 17px/1.35 var(--serif);color:var(--chalk);background:transparent;border:1.5px solid rgba(241,239,230,.35);border-radius:3px;padding:13px 16px;cursor:pointer;transition:border-color .2s,background .2s;display:flex;gap:14px;align-items:center}
+.q-opt:hover:not([disabled]){border-color:var(--chalk);background:rgba(255,255,255,.05)}
+.q-opt[disabled]{cursor:default}
+.q-opt .k{font:700 18px/1 var(--chalkf);color:var(--chalk-dim);width:16px;flex:none}
+.q-opt.right{border-color:#b7d9a8;background:rgba(150,200,130,.15)}
+.q-opt.wrong{border-color:#e39a8c;background:rgba(220,120,100,.12);animation:qshake .4s}
+@keyframes qshake{25%{transform:translateX(-5px)}50%{transform:translateX(4px)}75%{transform:translateX(-2px)}}
+.q-fb{font:400 16px/1.55 var(--serif);color:#e4e2d8;margin:0}
+.q-fb b{font:700 21px/1 var(--chalkf);color:#fff;margin-right:8px}
+.q-btn{align-self:flex-start;font:600 12px/1 var(--ui);letter-spacing:.16em;text-transform:uppercase;background:var(--chalk);color:var(--slate);border:0;border-radius:2px;padding:14px 18px;cursor:pointer;transition:transform .15s}
+.q-btn:hover{transform:translateY(-1px)}
+.q-btn:focus-visible,.q-opt:focus-visible{outline:2px solid #f7e3b8;outline-offset:2px}
+.q-score{font:700 clamp(68px,11vw,112px)/1 var(--chalkf);color:#fff;animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+.dots{display:flex;gap:6px;flex-wrap:wrap}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(241,239,230,.45)}
+.dots i.ok{background:#b7d9a8;border-color:#b7d9a8}.dots i.no{background:#e39a8c;border-color:#e39a8c}
+@media (max-width:760px){.q-grid{grid-template-columns:1fr}}
+
+/* ---------- competition notice ---------- */
+.comp{padding-block:76px 12px}
+.notice{position:relative;background:#fff;padding:clamp(28px,5vw,58px);box-shadow:0 1px 2px rgba(0,0,0,.06),0 26px 50px -24px rgba(40,50,40,.45);transform:rotate(-.4deg);max-width:1000px;margin:0 auto}
+.notice::before,.notice::after{content:"";position:absolute;top:14px;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f3d58d,#a77b2c 60%,#6d4d17);box-shadow:0 2px 3px rgba(0,0,0,.35)}
+.notice::before{left:18px}.notice::after{right:18px}
+.n-top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:24px 48px;align-items:end;border-bottom:1px solid var(--lime-2);padding-bottom:30px}
+.notice h2{font:400 clamp(34px,5.2vw,60px)/1 var(--display);margin:10px 0 16px;text-wrap:balance}
+.theme{font:italic 400 18px/1.55 var(--serif);color:var(--ink-dim);margin:0;max-width:56ch}
+.left{text-align:right}
+.lnum{font:400 clamp(64px,9vw,108px)/.9 var(--display);color:var(--claret);font-variant-numeric:lining-nums}
+.llab{font:600 12px/1.4 var(--ui);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-top:8px}
+.prizes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:30px}
+.prize{padding:4px 24px;border-left:1px solid var(--lime-2);min-width:0}.prize:first-child{padding-left:0;border-left:0}
+.amt{font:400 clamp(42px,5vw,58px)/1 var(--display);color:var(--ink)}
+.prize h3{font:600 13px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;margin:12px 0 4px;color:var(--claret)}
+.prize p{margin:0;font-size:15px;color:var(--ink-dim)}
+.tl{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative;--prog:0%}
+.tl::before,.tl::after{content:"";position:absolute;left:0;top:9px;height:2px}
+.tl::before{right:0;background:var(--lime-2)}
+.tl::after{width:var(--prog);background:var(--claret);transition:width 1.8s cubic-bezier(.2,.8,.2,1)}
+.tl li{position:relative;padding:32px 16px 0 0;min-width:0}
+.tl li::before{content:"";position:absolute;top:2px;left:0;width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--sage-dk);z-index:1}
+.tl li.done::before{background:var(--claret);border-color:var(--claret)}
+.tl li.now::before{border-color:var(--claret);background:#fff;box-shadow:0 0 0 6px rgba(110,42,42,.16);animation:ring 2s ease-in-out infinite}
+@keyframes ring{50%{box-shadow:0 0 0 11px rgba(110,42,42,.04)}}
+.tl .d{font:600 12px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--claret)}
+.tl .e{font:400 19px/1.3 var(--display);margin-top:6px}
+.cta-row{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:40px;padding-top:30px;border-top:1px solid var(--lime-2)}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--lime);text-decoration:none;font:600 13px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;padding:17px 22px;border-radius:2px;transition:transform .2s,background .2s}
+.cta:hover{background:var(--claret);transform:translateY(-1px)}
+.cta:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
+.cta-row p{margin:0;color:var(--ink-dim);font-size:15px}
+.vote{margin:26px 0 0;background:var(--lime);padding:16px 18px;border-left:3px solid var(--claret);font-size:16px}
+@media (max-width:760px){.n-top{grid-template-columns:1fr}.left{text-align:left}
+  .prizes{grid-template-columns:1fr;gap:18px}.prize{padding:16px 0 0;border-left:0;border-top:1px solid var(--lime-2)}.prize:first-child{padding-top:0;border-top:0}
+  .tl{grid-template-columns:1fr}.tl::before,.tl::after{left:7px;top:0;width:2px;height:auto}.tl::before{bottom:0;right:auto}.tl::after{height:var(--prog);bottom:auto;transition:height 1.8s cubic-bezier(.2,.8,.2,1)}
+  .tl li{padding:0 0 22px 34px}.tl li::before{top:2px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <a class="kicker rise" href="#competition">An entry in the Bayford Inn Art Competition 2026 →</a>
+      <h1 class="rise d1">Twenty Nights <i>in</i> Bayford</h1>
+      <p class="lede rise d2">Twenty doors are cut into the bar room. One opens each night of the exhibition, from 7 November to the Anniversary &amp; Awards Night on the 26th. Behind each is a true piece of Bayford's story.</p>
+      <div class="count rise d3"><div class="slate-sm" id="cnum">–</div><p id="clab">nights until the Awards Night</p></div>
+    </div>
+    <figure class="photo"><img src="img/front.jpg" alt="The Bayford Inn from the road: Somerset stone, sash windows, the hanging sign and flower troughs" width="401" height="360"><figcaption>The Bayford Inn, on the old London road</figcaption></figure>
+  </header>
+</div>
+
+<section class="panel">
+  <div class="wrap">
+    <div class="bar">
+      <div class="state-wrap"><div class="state" id="state">Loading…</div><div class="clock" id="clock" aria-live="off"></div></div>
+      <label class="toggle" for="preview"><input type="checkbox" id="preview"><span class="track"></span><span>Preview every door</span></label>
+    </div>
+    <div class="frame"><div class="pan" id="pan"><div class="room" id="room" role="group" aria-label="Photograph of the bar room with twenty calendar doors"></div></div></div>
+    <div class="swipe">Swipe to look around the room →</div>
+    <div class="legend"><span id="roomCap">The bar room · Bayford, Somerset</span><span id="opened">0 of 20 doors opened</span></div>
+  </div>
+</section>
+
+<section class="quiz" id="quiz">
+  <div class="wrap q-grid">
+    <div>
+      <div class="lbl chalklbl">Quiz night</div>
+      <h2 class="q-h">How well do you know Bayford?</h2>
+      <p class="q-lead">Every door you open adds a question to the round. Come back each night and the quiz grows with the calendar.</p>
+      <p class="q-tally">Questions unlocked: <b id="qCount">0 of 20</b></p>
+    </div>
+    <div class="q-card" id="qCard" aria-live="polite"></div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="comp" id="competition">
+    <div class="notice">
+      <div class="n-top">
+        <div>
+          <div class="lbl">On the notice board</div>
+          <h2>The Bayford Inn Annual Art Competition</h2>
+          <p class="theme">A new tradition starts this year. The theme is the Bayford Inn itself: the building, the community, its history, the people, a detail of the pub, or simply what a village pub means to you. This calendar is one of the entries.</p>
+        </div>
+        <div class="left"><div class="lnum" id="cLeft">–</div><div class="llab" id="cLeftLab"></div></div>
+      </div>
+      <div class="prizes">
+        <div class="prize"><div class="amt">£250</div><h3>Open Award</h3><p>Ages 15 and over</p></div>
+        <div class="prize"><div class="amt">£50</div><h3>Young Artist Award</h3><p>Under 15</p></div>
+        <div class="prize"><div class="amt">£20</div><h3>People's Choice Award</h3><p>Food or drink voucher, voted for by visitors</p></div>
+      </div>
+      <ol class="tl" id="tl">
+        <li id="t0"><div class="d">Autumn 2026</div><div class="e">Entries open</div></li>
+        <li id="t1"><div class="d">7 November</div><div class="e">Entries close</div></li>
+        <li id="t2"><div class="d">7–25 November</div><div class="e">Exhibition and voting</div></li>
+        <li id="t3"><div class="d">26 November</div><div class="e">Anniversary &amp; Awards Night</div></li>
+      </ol>
+      <div class="cta-row"><a class="cta" href="https://bayfordinn.com/bayford-inn-art-competition" target="_blank" rel="noopener">Rules and entry form →</a><p>Free to enter. All ages and all abilities welcome.</p></div>
+      <p class="vote"><b>Enjoying the calendar?</b> Vote for it in the People's Choice Award when you visit the pub between 7 and 25 November.</p>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="foot">
+    <div>
+      <div class="lbl">About this entry</div>
+      <h2>A calendar for the village that saved its pub</h2>
+      <p>Made for the Bayford Inn's first Annual Art Competition. Each door sits on something real in the bar room: the windows onto the old London road, the lamps, the chairs, the chalkboard and, last of all, the fireplace.</p>
+    </div>
+    <div>
+      <div class="lbl">Where the facts come from</div>
+      <ul>
+        <li><a href="https://www.british-history.ac.uk/vch/som/vol7/pp201-208" target="_blank" rel="noopener">Victoria County History of Somerset, vol. 7: Stoke Trister</a></li>
+        <li><a href="https://camra.org.uk/pubs/bayford-inn-bayford-124412" target="_blank" rel="noopener">CAMRA: Bayford Inn</a></li>
+        <li><a href="https://edm.parliament.uk/early-day-motion/64860/reopening-of-the-bayford-inn-in-wincanton" target="_blank" rel="noopener">UK Parliament: Early Day Motion 2422</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Robert_Sanders,_1st_Baron_Bayford" target="_blank" rel="noopener">Robert Sanders, 1st Baron Bayford</a></li>
+        <li><a href="https://bayfordinn.com/" target="_blank" rel="noopener">bayfordinn.com</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<div class="scrim" id="scrim" hidden>
+  <div class="board" role="dialog" aria-modal="true" aria-labelledby="bTitle">
+    <button class="x" id="bx" aria-label="Close">×</button>
+    <div class="b-eye" id="bEye"></div>
+    <div class="b-year" id="bYear"></div>
+    <h2 class="b-title" id="bTitle"></h2>
+    <p class="b-body" id="bBody"></p>
+    <p class="b-src" id="bSrc"></p>
+    <div class="b-nav"><button class="btn" id="bPrev">← Previous</button><button class="btn" id="bNext">Next →</button></div>
+  </div>
+</div>
+
+<script>
+const VCH="Victoria County History of Somerset, vol. 7";
+// n: [x, y, w, h] in the 2000×1125 photo, the object it sits on, the year chalked inside, title, story, source
+const DOORS={
+ 7:[770,200,580,160,"the chimney breast","1673","The first inn on record","There was an inn at Bayford by 1673, and it was still open in 1686. That makes innkeeping here more than 350 years old.",VCH],
+ 8:[15,195,135,180,"the left window","1200s","The road outside","The London road through Bayford is mentioned as early as the 13th century. People were travelling past this window long before anyone served them a drink.",VCH],
+ 9:[540,200,75,130,"the lamp by the curtain","1343","Bayford's chapel","Medieval Bayford had a chapel of its own. A priest serving it is recorded in the 13th century and again in 1343.",VCH],
+ 10:[165,195,155,180,"the right window","1764","Wesley preached here","In September 1764 John Wesley, the founder of Methodism, preached at Bayford.",VCH],
+ 11:[878,828,186,297,"the chair by the door","1756","The road became a turnpike","In 1756 the Wincanton turnpike trust took over the road through Bayford and began charging tolls to keep it in repair.",VCH],
+ 12:[670,305,80,148,"the picture wall","1783","When it was the Peacock","In the 1780s the inn on the south side of the road was called the Peacock. By 1792 the name Unicorn had moved across to it, and it traded as the Unicorn for over two hundred years.",VCH+"; CAMRA"],
+ 13:[615,510,105,72,"the radiator","1731","Bayford had two pubs","The village's other inn, the White Horse, was licensed by 1731. It was still open in 1866 and closed soon after. The building is now a house called Springfield.",VCH],
+ 14:[60,700,500,195,"the long table","1800","The Good Samaritans","In 1800 villagers set up the Bayford Good Samaritan friendly society, a club whose members paid in to help each other through hard times. They met at the White Horse.",VCH],
+ 15:[1614,314,200,164,"the chalkboard","1784","The Bayford mummers","At Christmas 1784 the Bayford mummers performed their play at Redlynch House. Mummers' plays were rhyming folk plays acted out in costume around Christmas.",VCH],
+ 16:[440,205,90,350,"the curtain","1807","Looms on the London road","Bayford had cloth workers, perhaps from the early 1600s. In 1807 the linen maker Thomas Light kept a yarn yard here, and weavers were still making ticking, a strong mattress cloth, in the 1820s.",VCH],
+ 17:[170,485,215,110,"the plants on the sill","27","Twenty-seven houses","Around 1785 Bayford had about 27 houses. Stoke, which gives the parish its name, had 30.",VCH],
+ 18:[1520,820,280,125,"the flagstones","4","One lane, four names","The lane between Wincanton, Bayford and Stoke has been called Merrydown, Dewlish, Devilish and Devenish Lane.",VCH],
+ 19:[1336,700,170,243,"the wheelback chair","1929","Lord Bayford","Sir Robert Sanders, Minister of Agriculture from 1922 to 1924, lived at Bayford Lodge from about 1920. In 1929 he was made Baron Bayford, of Stoke Trister. The title ended when he died in 1940.",VCH+"; Wikipedia"],
+ 20:[1645,168,100,140,"the far lamp","1482","A portable altar","The parish parsonage stood at Bayford. In 1482 its elderly rector was allowed to use a portable altar there.",VCH],
+ 21:[1543,550,243,236,"the far radiator","1811","The poorhouse","The parish built a poorhouse at Bayford, said to date from 1811, after a cottage at Stoke was probably burnt down. By 1838 it had a garden and nearly two acres.",VCH],
+ 22:[585,590,72,100,"the jar of flowers","1992","The bypass","For centuries the main road ran right past the inn. In 1992 a new route to the south was finished, and through traffic stopped coming through Bayford.",VCH],
+ 23:[43,500,122,120,"the stone jar","2016","Cider pub of the year","Trading as the Unicorn, the inn won CAMRA's Cider and Perry Pub of the Year award in 2016.","CAMRA"],
+ 24:[1080,648,240,96,"the round table","2024","Closed","The pub closed in April 2024 and was put up for auction.","CAMRA"],
+ 25:[1393,950,193,175,"the flowers","70+","Seventy neighbours","More than 70 people from Bayford came together to buy the pub at auction. The Bayford Inn Benefit Society sold community shares to pay for the refurbishment, and the inn is listed as an Asset of Community Value.","UK Parliament EDM 2422; CAMRA"],
+ 26:[893,437,350,203,"the fireplace","1 year","One year since reopening","The Bayford Inn reopened in November 2025, owned and run by the village. Tonight is its first anniversary. Thank you to everyone who bought a share, worked a shift, cooked, or just came in for a pint.","bayfordinn.com; CAMRA; UK Parliament EDM 2422"]
+};
+const W0=2000,H0=1125;
+
+// dates, UK time
+const P=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"numeric",day:"numeric"}).formatToParts(new Date());
+const g=k=>+P.find(x=>x.type===k).value;
+const dn=(y,m,d)=>Date.UTC(y,m-1,d)/864e5, today=dn(g("year"),g("month"),g("day"));
+const wk=n=>new Date(Date.UTC(2026,10,n)).toLocaleDateString("en-GB",{weekday:"long",timeZone:"UTC"});
+let preview=false,opened=new Set();
+try{preview=localStorage.getItem("tn2_preview")==="1";opened=new Set(JSON.parse(localStorage.getItem("tn2_opened")||"[]"))}catch(e){}
+const save=()=>{try{localStorage.setItem("tn2_opened",JSON.stringify([...opened]));localStorage.setItem("tn2_preview",preview?"1":"0")}catch(e){}};
+const canOpen=n=>preview||today>=dn(2026,11,n);
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+(()=>{const left=dn(2026,11,26)-today,c=document.getElementById("cnum"),l=document.getElementById("clab");
+  if(left>1){c.textContent=left;l.textContent="nights until the Anniversary & Awards Night"}
+  else if(left===1){c.textContent="1";l.textContent="night until the Anniversary & Awards Night"}
+  else if(left===0){c.textContent="Tonight";l.textContent="Anniversary & Awards Night"}
+  else{c.textContent="20/20";l.textContent="All doors open. Thank you for counting down."}})();
+
+const room=document.getElementById("room");
+for(const n in DOORS){const [x,y,w,h,obj]=DOORS[n];const c=document.createElement("div");
+  c.className="cell"+(n==26?" big":"");c.dataset.n=n;
+  c.style.cssText=`left:${x/W0*100}%;top:${y/H0*100}%;width:${w/W0*100}%;height:${h/H0*100}%`;
+  c.innerHTML=`<div class="inside" aria-hidden="true"><span>${DOORS[n][5]}</span></div><button class="door"><span class="face"></span><span class="back"></span><span class="num">${n}</span></button>`;
+  room.appendChild(c)}
+
+function size(){const s=room.clientWidth/W0;if(!s)return;
+  room.querySelectorAll(".cell").forEach(c=>{const [x,y,w,h]=DOORS[c.dataset.n];const f=c.querySelector(".face");
+    f.style.backgroundSize=`${W0*s}px ${H0*s}px`;f.style.backgroundPosition=`${-x*s}px ${-y*s}px`;
+    const m=Math.min(w,h)*s;c.style.setProperty("--ns",Math.max(15,Math.min(34,m*.38))+"px");
+    const yr=DOORS[c.dataset.n][5];c.style.setProperty("--fs",Math.max(11,Math.min(m*.42,w*s/(yr.length*.62)))+"px")})}
+new ResizeObserver(size).observe(room);size();
+const pan=document.getElementById("pan");
+requestAnimationFrame(()=>{if(pan.scrollWidth>pan.clientWidth)pan.scrollLeft=(pan.scrollWidth-pan.clientWidth)/2});
+
+function refresh(){room.querySelectorAll(".cell").forEach(c=>{const n=+c.dataset.n,ok=canOpen(n),o=ok&&opened.has(n);
+    c.classList.toggle("open",o);c.classList.toggle("ready",ok&&!o);c.classList.toggle("tonight",ok&&!o&&!preview&&today===dn(2026,11,n));
+    c.querySelector(".door").setAttribute("aria-label",o?`${n} November, ${DOORS[n][4]}: ${DOORS[n][6]}. Read again`:ok?`${n} November, ${DOORS[n][4]}. Open the door`:`${n} November, ${DOORS[n][4]}. Opens ${wk(n)} ${n} November`)});
+  const done=[...opened].filter(canOpen).length,ready=room.querySelectorAll(".cell.ready").length;
+  document.getElementById("opened").textContent=`${done} of 20 doors opened`;
+  const st=document.getElementById("state");
+  if(preview)st.innerHTML="<b>Preview mode.</b> Every door can be opened.";
+  else if(today<dn(2026,11,7))st.innerHTML="The first door opens on <b>Saturday 7 November</b>.";
+  else if(today<=dn(2026,11,26))st.innerHTML=ready?`<b>${ready===1?"A door is":ready+" doors are"} ready to open.</b> Look for the glow.`:"<b>You're up to date.</b> Come back tomorrow for the next door.";
+  else st.innerHTML="<b>All twenty doors are open.</b>";
+  document.getElementById("preview").checked=preview;window.onRefresh&&onRefresh()}
+refresh();
+
+const toast=document.getElementById("toast");let tt;
+const say=m=>{toast.textContent=m;toast.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove("on"),2600)};
+room.addEventListener("click",e=>{const b=e.target.closest(".door");if(!b)return;const n=+b.parentElement.dataset.n;
+  if(!canOpen(n)){b.classList.remove("shake");void b.offsetWidth;b.classList.add("shake");say(`Door ${n} opens on ${wk(n)} ${n} November.`);return}
+  if(!opened.has(n)){opened.add(n);save();refresh();window.burst&&burst(n);setTimeout(()=>show(n),reduce?0:750)}else show(n)});
+room.addEventListener("animationend",e=>{if(e.animationName==="shake")e.target.classList.remove("shake")});
+document.getElementById("preview").addEventListener("change",e=>{preview=e.target.checked;save();refresh();say(preview?"Preview on. Every door can be opened.":"Preview off. Doors follow the real dates.")});
+
+const scrim=document.getElementById("scrim");let cur,back;
+const list=()=>Object.keys(DOORS).map(Number).filter(n=>canOpen(n)&&opened.has(n)).sort((a,b)=>a-b);
+function fill(n){cur=n;const d=DOORS[n];
+  bEye.textContent=`${wk(n)} ${n} November · behind ${d[4]}`;bYear.textContent=d[5];bTitle.textContent=d[6];bBody.textContent=d[7];bSrc.textContent="Source: "+d[8];
+  const l=list(),i=l.indexOf(n);bPrev.disabled=i<=0;bNext.disabled=i<0||i>=l.length-1}
+function show(n){back=document.activeElement;fill(n);scrim.hidden=false;requestAnimationFrame(()=>scrim.classList.add("on"));bx.focus()}
+function hide(){scrim.classList.remove("on");setTimeout(()=>scrim.hidden=true,280);back&&back.focus&&back.focus({preventScroll:true})}
+bx.onclick=hide;scrim.onclick=e=>{if(e.target===scrim)hide()};
+bPrev.onclick=()=>{const l=list(),i=l.indexOf(cur);if(i>0)fill(l[i-1])};
+bNext.onclick=()=>{const l=list(),i=l.indexOf(cur);if(i<l.length-1)fill(l[i+1])};
+document.addEventListener("keydown",e=>{if(scrim.hidden)return;if(e.key==="Escape")hide();else if(e.key==="ArrowLeft")bPrev.click();else if(e.key==="ArrowRight")bNext.click();
+  else if(e.key==="Tab"){const f=[...scrim.querySelectorAll("button:not([disabled])")],i=f.indexOf(document.activeElement);
+    if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}});
+
+// ---------- the living room ----------
+const fx=document.createElement("canvas");fx.className="fx";fx.setAttribute("aria-hidden","true");room.appendChild(fx);
+const ctx=fx.getContext("2d");
+const ukH=+new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",hour:"numeric",hourCycle:"h23"}).format(new Date());
+const evening=ukH>=17||ukH<7;
+if(evening){room.classList.add("evening");document.getElementById("roomCap").textContent="Evening in the bar room · Bayford, Somerset"}
+let FW=0,FH=0,S=1;
+function fxSize(){const r=room.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);FW=r.width;FH=r.height;S=FW/W0;fx.width=Math.round(FW*d);fx.height=Math.round(FH*d);ctx.setTransform(d,0,0,d,0,0)}
+const LAMPS=[[566,262],[1693,242]],FIRE=[1052,520];
+const embers=[],motes=[],dust=[];
+for(let i=0;i<34;i++)motes.push({x:20+Math.random()*300,y:190+Math.random()*360,vx:(Math.random()-.5)*.08,vy:-.03-Math.random()*.06,r:.8+Math.random()*1.6,a:Math.random()*6});
+window.burst=n=>{const [x,y,w,h]=DOORS[n];for(let i=0;i<40;i++)dust.push({x:x+w*(.8+Math.random()*.25),y:y+Math.random()*h,vx:1+Math.random()*3.5,vy:-2+Math.random()*2.4,life:1,r:1+Math.random()*2.4})};
+function glow(x,y,r,a,col){const gx=ctx.createRadialGradient(x*S,y*S,0,x*S,y*S,r*S);gx.addColorStop(0,`rgba(${col},${a})`);gx.addColorStop(1,`rgba(${col},0)`);ctx.fillStyle=gx;ctx.fillRect((x-r)*S,(y-r)*S,2*r*S,2*r*S)}
+let t0=performance.now(),running=false,raf;
+function frame(t){const dt=Math.min(50,t-t0)/16.7;t0=t;ctx.clearRect(0,0,FW,FH);ctx.globalCompositeOperation="lighter";
+  const k=evening?1.7:1,ps=Math.max(.7,S*1.5);
+  LAMPS.forEach(([x,y],i)=>{const f=.2+.05*Math.sin(t/190+i*2)+.04*Math.sin(t/47+i*3)+(Math.random()<.015?-.07:0);glow(x,y,210,f*k,"255,175,85");glow(x,y,55,f*1.5*k,"255,225,160")});
+  const ff=.26+.07*Math.sin(t/110)+.05*Math.sin(t/31)+Math.random()*.05;glow(FIRE[0],FIRE[1],270,ff*k,"255,135,45");glow(FIRE[0],FIRE[1]+25,95,ff*1.3*k,"255,200,110");
+  if(!evening)motes.forEach(m=>{m.x+=m.vx*dt;m.y+=m.vy*dt;m.a+=.02*dt;if(m.y<185)m.y=550;if(m.x<15)m.x=325;if(m.x>330)m.x=20;
+    ctx.fillStyle=`rgba(255,250,235,${.22+.18*Math.sin(m.a)})`;ctx.beginPath();ctx.arc(m.x*S,m.y*S,m.r*ps*.8,0,7);ctx.fill()});
+  if(Math.random()<.3*dt)embers.push({x:FIRE[0]-45+Math.random()*90,y:FIRE[1]+15,vx:(Math.random()-.5)*.35,vy:-.5-Math.random()*.8,life:1,r:.8+Math.random()*1.7});
+  for(let i=embers.length-1;i>=0;i--){const e=embers[i];e.x+=(e.vx+Math.sin(t/280+i)*.25)*dt;e.y+=e.vy*dt;e.life-=.011*dt;if(e.life<=0||e.y<440){embers.splice(i,1);continue}
+    ctx.fillStyle=`rgba(255,${150+Math.random()*80|0},60,${e.life})`;ctx.beginPath();ctx.arc(e.x*S,e.y*S,e.r*ps,0,7);ctx.fill()}
+  ctx.globalCompositeOperation="source-over";
+  for(let i=dust.length-1;i>=0;i--){const d=dust[i];d.x+=d.vx*dt;d.y+=d.vy*dt;d.vy+=.13*dt;d.vx*=.97;d.life-=.018*dt;if(d.life<=0){dust.splice(i,1);continue}
+    ctx.fillStyle=`rgba(255,255,250,${d.life*.9})`;ctx.beginPath();ctx.arc(d.x*S,d.y*S,d.r*ps,0,7);ctx.fill()}
+  if(running)raf=requestAnimationFrame(frame)}
+function start(){if(running||reduce)return;running=true;t0=performance.now();raf=requestAnimationFrame(frame)}
+function stop(){running=false;cancelAnimationFrame(raf)}
+new ResizeObserver(()=>{fxSize();if(reduce)frame(performance.now())}).observe(room);fxSize();
+if(reduce)frame(performance.now());
+let onScreen=true;
+new IntersectionObserver(es=>{onScreen=es[0].isIntersecting;onScreen&&!document.hidden?start():stop()}).observe(room);
+document.addEventListener("visibilitychange",()=>{document.hidden?stop():onScreen&&start()});
+start();
+
+// ---------- next-door clock ----------
+const clock=document.getElementById("clock");
+const FMT=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",second:"numeric",hourCycle:"h23"});
+function tick(){const pp=FMT.formatToParts(new Date()),q=k=>+pp.find(x=>x.type===k).value;
+  if(dn(q("year"),q("month"),q("day"))!==today){location.reload();return}
+  let target=null;if(today<dn(2026,11,7))target=dn(2026,11,7);else if(today<dn(2026,11,26))target=today+1;
+  if(target===null||preview){clock.textContent="";return}
+  const total=(target-today-1)*86400+86400-(q("hour")*3600+q("minute")*60+q("second"));
+  const d=Math.floor(total/86400),h=Math.floor(total%86400/3600),m=Math.floor(total%3600/60),s=total%60,z=v=>String(v).padStart(2,"0");
+  clock.innerHTML=`${target===dn(2026,11,7)?"First door opens in":"Door "+(target-dn(2026,11,0))+" opens in"}<b>${d?d+"d ":""}${z(h)}:${z(m)}:${z(s)}</b>`}
+tick();setInterval(tick,1000);
+
+// ---------- quiz ----------
+const QZ={
+ 7:["By what year is an inn first recorded at Bayford?",["1673","1773","1873"]],
+ 8:["In which century is the London road through Bayford first mentioned?",["The 13th century","The 16th century","The 18th century"]],
+ 9:["In what year is a priest at Bayford's chapel recorded?",["1343","1543","1743"]],
+ 10:["Who preached at Bayford in September 1764?",["John Wesley","George Whitefield","William Booth"]],
+ 11:["Who took over the road through Bayford in 1756?",["The Wincanton turnpike trust","The Royal Mail","The parish church"]],
+ 12:["What was the inn called in the 1780s?",["The Peacock","The White Hart","The Swan"]],
+ 13:["What was Bayford's other inn called?",["The White Horse","The Red Lion","The Plough"]],
+ 14:["Where did the Bayford Good Samaritans meet?",["At the White Horse","In the chapel","At Bayford Lodge"]],
+ 15:["Where did the Bayford mummers perform at Christmas 1784?",["Redlynch House","Wells Cathedral","Stourhead"]],
+ 16:["What were Bayford's weavers still making in the 1820s?",["Ticking for mattresses","Sailcloth","Silk"]],
+ 17:["Roughly how many houses did Bayford have around 1785?",["27","72","127"]],
+ 18:["Which of these is NOT a name the lane to Stoke has gone by?",["Primrose Lane","Merrydown Lane","Devilish Lane"]],
+ 19:["What title did Sir Robert Sanders take in 1929?",["Baron Bayford","Earl of Wincanton","Viscount Stoke"]],
+ 20:["What was Bayford's elderly rector allowed to use in 1482?",["A portable altar","A horse and carriage","A bell tower"]],
+ 21:["When was the Bayford poorhouse said to have been built?",["1811","1711","1911"]],
+ 22:["When was the new road bypassing Bayford finished?",["1992","1962","2008"]],
+ 23:["Which CAMRA award did the inn win in 2016?",["Cider and Perry Pub of the Year","Best Sunday Roast","Most Improved Pub"]],
+ 24:["When did the pub close and go up for auction?",["April 2024","December 2019","June 2022"]],
+ 25:["How many Bayford residents came together to buy the pub?",["More than 70","About 12","Over 500"]],
+ 26:["When did the Bayford Inn reopen under village ownership?",["November 2025","March 2024","January 2026"]]
+};
+const qCard=document.getElementById("qCard"),qCount=document.getElementById("qCount");
+let qs=[],qi=0,score=0,res=[];
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const dots=()=>`<div class="dots">${qs.map((_,i)=>`<i class="${res[i]===true?"ok":res[i]===false?"no":""}"></i>`).join("")}</div>`;
+function qIntro(){const a=list();qCount.textContent=`${a.length} of 20`;qs=[];
+  if(a.length<3){qCard.innerHTML=`<div class="q-meta"><span>Round locked</span><span>${a.length} of 3 doors</span></div><p class="q-prompt">Open three doors to unlock the round.</p><p class="q-fb">Each door you open adds a question. ${!preview&&today<dn(2026,11,7)?"The first door opens on Saturday 7 November.":"Look for the glowing door in the bar room."}</p>`;return}
+  qCard.innerHTML=`<div class="q-meta"><span>Tonight's round</span><span>${a.length} questions</span></div><p class="q-prompt">${a.length} questions, one for every door you've opened. No looking back at the doors.</p><p class="q-fb">Get them all right and you could set the next pub quiz.</p><button class="q-btn" id="qGo">Start the round</button>`;
+  document.getElementById("qGo").onclick=()=>{qs=shuffle(a.slice());qi=0;score=0;res=[];ask()}}
+function ask(){const n=qs[qi],[q,opts]=QZ[n],sh=shuffle(opts.map((o,i)=>({o,ok:i===0})));
+  qCard.innerHTML=`<div class="q-meta"><span>Question ${qi+1} of ${qs.length}</span><span>${score} correct</span></div>${dots()}<p class="q-prompt">${q}</p><div class="q-opts">${sh.map((s,i)=>`<button class="q-opt" data-ok="${s.ok?1:0}"><span class="k">${"ABC"[i]}</span><span>${s.o}</span></button>`).join("")}</div><p class="q-fb" id="qFb"></p>`;
+  qCard.querySelectorAll(".q-opt").forEach(b=>b.onclick=()=>answer(b,n));qCard.querySelector(".q-opt").focus({preventScroll:true})}
+function answer(b,n){const ok=b.dataset.ok==="1";res[qi]=ok;if(ok)score++;
+  qCard.querySelectorAll(".q-opt").forEach(x=>{x.disabled=true;if(x.dataset.ok==="1")x.classList.add("right")});if(!ok)b.classList.add("wrong");
+  qCard.querySelector(".dots").outerHTML=dots();
+  document.getElementById("qFb").innerHTML=`<b>${ok?"Correct.":"Not quite."}</b>It's behind door ${n}, ${DOORS[n][4]}.`;
+  const nx=document.createElement("button");nx.className="q-btn";nx.textContent=qi<qs.length-1?"Next question":"See your score";
+  nx.onclick=()=>{qi++;qi<qs.length?ask():done()};qCard.appendChild(nx);nx.focus({preventScroll:true})}
+function done(){const r=score/qs.length,msg=r===1?"Full marks. You could set the next quiz yourself.":r>=.6?"A strong round. Bayford would be proud.":"Plenty still to learn. Keep opening doors and try again.";
+  qCard.innerHTML=`<div class="q-meta"><span>Final score</span><span>${qs.length} questions</span></div>${dots()}<div class="q-score">${score}/${qs.length}</div><p class="q-fb">${msg}</p><button class="q-btn" id="qAgain">Play again</button>`;
+  document.getElementById("qAgain").onclick=()=>{qs=shuffle(qs);qi=0;score=0;res=[];ask()}}
+window.onRefresh=()=>{if(!qs.length||qi>=qs.length)qIntro();else qCount.textContent=`${list().length} of 20`};
+qIntro();
+
+// ---------- competition ----------
+(()=>{const close=dn(2026,11,7),vEnd=dn(2026,11,25),big=document.getElementById("cLeft"),lab=document.getElementById("cLeftLab");let p=0;const L=i=>document.getElementById("t"+i);
+  if(today<close){const left=close-today;big.textContent=left;lab.textContent=left===1?"day left to enter":"days left to enter";L(0).classList.add("now");p=25*Math.max(.15,1-left/40)}
+  else if(today<=vEnd){const l=vEnd-today+1;big.textContent=l;lab.textContent=(l===1?"day":"days")+" left to vote at the pub";[0,1].forEach(i=>L(i).classList.add("done"));L(2).classList.add("now");p=25+50*(today-close)/19}
+  else if(today===vEnd+1){big.textContent="Tonight";lab.textContent="the winners are announced";[0,1,2].forEach(i=>L(i).classList.add("done"));L(3).classList.add("now");p=75}
+  else{big.textContent="2027";lab.textContent="see you next year";[0,1,2,3].forEach(i=>L(i).classList.add("done"));p=100}
+  const tl=document.getElementById("tl");setTimeout(()=>tl.style.setProperty("--prog",p+"%"),400)})();
+</script>
+</body>
+</html>
